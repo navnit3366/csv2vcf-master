@@ -1,0 +1,18 @@
+sudo: true
+
+language: python
+
+python:
+  - 3.5
+
+install:
+  - sudo apt-get update
+  - sudo apt-get install python-tk
+  - python3 setup.py install
+
+script:
+  - cd csv2vcf
+  - cat contact.csv
+  - python3 -m csv2vcf contact.csv
+  - cd VCF_CONVERT_contact
+  - ls
